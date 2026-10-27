@@ -10,6 +10,8 @@ resource "azapi_resource" "eventgrid_namespace" {
   response_export_values = [
     "properties.provisioningState",
     "properties.topicsConfiguration.hostname",
+    "properties.topicSpacesConfiguration.hostname",
+    "properties.topicSpacesConfiguration.state",
     "identity.principalId",
     "identity.tenantId"
   ]

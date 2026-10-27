@@ -59,6 +59,7 @@ locals {
   role_definition_resource_substring = "/providers/Microsoft.Authorization/roleDefinitions"
   # Topic spaces configuration - only include if any non-null values exist
   topic_spaces_config = var.topic_spaces_configuration != null ? {
+    state                                      = var.topic_spaces_configuration.state
     maximumClientSessionsPerAuthenticationName = var.topic_spaces_configuration.maximum_client_sessions_per_authentication_name
     maximumSessionExpiryInHours                = var.topic_spaces_configuration.maximum_session_expiry_in_hours
     routeTopicResourceId                       = var.topic_spaces_configuration.route_topic_resource_id

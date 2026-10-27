@@ -524,6 +524,7 @@ DESCRIPTION
 # Topic spaces configuration - simplified without validations
 variable "topic_spaces_configuration" {
   type = object({
+    state                                           = optional(string, null)
     alternative_authentication_name_source          = optional(list(string), [])
     maximum_client_sessions_per_authentication_name = optional(number, null)
     maximum_session_expiry_in_hours                 = optional(number, null)
@@ -534,6 +535,7 @@ variable "topic_spaces_configuration" {
   default     = null
   description = <<DESCRIPTION
 (Optional) Topic spaces configuration for MQTT and message routing. The following properties can be specified:
+- `state` - (Optional) Indicate if Topic Spaces Configuration is enabled for the namespace.
 - `alternative_authentication_name_source` - (Optional) A list of alternative authentication name sources.
 - `maximum_client_sessions_per_authentication_name` - (Optional) The maximum number of client sessions per authentication name.
 - `maximum_session_expiry_in_hours` - (Optional) The maximum session expiry time in hours.
